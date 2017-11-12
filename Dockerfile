@@ -23,7 +23,7 @@ RUN set -x \
         && ln -s $ORACLE_HOME/libclntsh.so.12.1 $ORACLE_HOME/libclntsh.so \
         && rm -rf /tmp/instantclient*.zip
 
-COPY ./requirements.txt /code/hrp/
-RUN pip install -r /code/hrp/requirements.txt
+COPY ./requirements.txt /usr/src/hrp/
+RUN pip install --no-cache-dir -r /usr/src/hrp/requirements.txt
 
 USER odoo
